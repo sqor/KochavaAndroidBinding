@@ -1,0 +1,6 @@
+/Users/purnell/Projects/KochavaAndroid/KochavaAndroid/obj/Debug/MonoAndroid,Version=v4.4.AssemblyAttribute.cs
+/Users/purnell/Projects/KochavaAndroid/KochavaAndroid/obj/Debug/KochavaAndroid.Jars.KochavaSDK.jar
+/Users/purnell/Projects/KochavaAndroid/KochavaAndroid/bin/Debug/KochavaAndroid.dll.mdb
+/Users/purnell/Projects/KochavaAndroid/KochavaAndroid/bin/Debug/KochavaAndroid.dll
+/Users/purnell/Projects/KochavaAndroid/KochavaAndroid/obj/Debug/KochavaAndroid.dll
+/Users/purnell/Projects/KochavaAndroid/KochavaAndroid/obj/Debug/KochavaAndroid.dll.mdb

@@ -1,0 +1,23 @@
+﻿<Properties StartupItem="KochavaAndroid/KochavaAndroid.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus 4 (KitKat)" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="KochavaAndroid" expanded="True">
+            <Node name="KochavaAndroid" expanded="True">
+              <Node name="Transforms" expanded="True">
+                <Node name="Metadata.xml" selected="True" />
+              </Node>
+            </Node>
+            <Node name="KochavaSample" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

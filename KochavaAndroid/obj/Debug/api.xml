@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<api>
+<package name="com.kochava.android.tracker">
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="BuildConfig" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="BuildConfig" static="false" type="com.kochava.android.tracker.BuildConfig" visibility="public">
+</constructor>
+<field deprecated="not deprecated" final="true" name="APPLICATION_ID" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;com.kochava.android.tracker&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="BUILD_TYPE" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;release&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="DEBUG" static="true" transient="false" type="boolean" type-generic-aware="boolean" value="false" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="FLAVOR" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="VERSION_CODE" static="true" transient="false" type="int" type-generic-aware="int" value="-1" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="VERSION_NAME" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;&quot;" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="DbAdapter" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="DbAdapter" static="false" type="com.kochava.android.tracker.DbAdapter" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="addEvent" native="false" return="int" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="org.json.JSONObject">
+</parameter>
+<parameter name="p1" type="boolean">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="cleanupEvents" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="generateDataString" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getApplicationData" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="insertApplicationData" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="updateApplicationData" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<field deprecated="not deprecated" final="true" name="KEY_CREATED_AT" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;created_at&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="KEY_DATA" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;data&quot;" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="android.database.sqlite.SQLiteOpenHelper" extends-generic-aware="android.database.sqlite.SQLiteOpenHelper" final="false" name="DbAdapter.DatabaseHelper" static="true" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="onCreate" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.database.sqlite.SQLiteDatabase">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onUpgrade" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.database.sqlite.SQLiteDatabase">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Feature" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="Feature" static="false" type="com.kochava.android.tracker.Feature" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+<parameter name="p1" type="java.util.HashMap&lt;java.lang.String, java.lang.Object&gt;">
+</parameter>
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="Feature" static="false" type="com.kochava.android.tracker.Feature" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+<parameter name="p1" type="boolean">
+</parameter>
+<parameter name="p2" type="java.util.HashMap&lt;java.lang.String, java.lang.Object&gt;">
+</parameter>
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="Feature" static="false" type="com.kochava.android.tracker.Feature" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="Feature" static="false" type="com.kochava.android.tracker.Feature" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+<parameter name="p2" type="boolean">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="Feature" static="false" type="com.kochava.android.tracker.Feature" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+<parameter name="p2" type="boolean">
+</parameter>
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="Feature" static="false" type="com.kochava.android.tracker.Feature" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="clearSuperProperties" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="deepLinkEvent" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="enableDebug" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="boolean">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="endSession" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="event" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="eventSpatial" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="double">
+</parameter>
+<parameter name="p2" type="double">
+</parameter>
+<parameter name="p3" type="double">
+</parameter>
+<parameter name="p4" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="flush" native="false" return="void" static="true" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getAttributionData" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getAttributionId" native="false" return="java.lang.String" static="true" synchronized="false" visibility="protected">
+<parameter name="p0" type="android.content.ContentResolver">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getKochavaDeviceId" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="linkIdentity" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.util.Map&lt;java.lang.String, java.lang.String&gt;">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="registerSuperProperties" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.util.Map&lt;java.lang.String, java.lang.String&gt;">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="sendKVQuery" native="false" return="void" static="true" synchronized="false" visibility="protected">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="setAppLimitTracking" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="boolean">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="setAttributionHandler" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="android.os.Handler">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="setErrorDebug" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="boolean">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="setLatlong" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="startSession" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="tryUpdate" native="false" return="void" static="false" synchronized="false" visibility="protected">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<field deprecated="not deprecated" final="true" name="ADLOGTAG" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;KochavaAds&quot;" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ATTRIBUTION_DATA" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;attributionData&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ATTRIBUTION_PREF_DATA" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;attributionData&quot;" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ATTRIBUTION_PREF_NAME" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;attributionPref&quot;" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="LINKIDENTITYBOOL" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;linkIdentityBool&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="LOGTAG" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;KochavaTracker&quot;" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="PREF_APPDATA" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;kochavaappdata&quot;" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="PREF_CUR" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;currency&quot;" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="PREF_INIT" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;initBool&quot;" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="PREF_INIT_DATA" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;initData&quot;" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="PREF_LAT" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;mylat&quot;" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="PREF_LONG" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;mylong&quot;" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="PREF_NAME" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;initPrefs&quot;" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="PREF_TIMESTOPPED" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;timeStampStopped&quot;" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="REQLOGTAG" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;KochavaRequirements&quot;" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="appContext" static="true" transient="false" type="android.content.Context" type-generic-aware="android.content.Context" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="kvinitdata" static="false" transient="false" type="org.json.JSONObject" type-generic-aware="org.json.JSONObject" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="kvinitdataholder" static="false" transient="false" type="org.json.JSONObject" type-generic-aware="org.json.JSONObject" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="kvinitorigdata" static="false" transient="false" type="org.json.JSONObject" type-generic-aware="org.json.JSONObject" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="overrideAutomaticSessions" static="true" transient="false" type="boolean" type-generic-aware="boolean" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="versionExtension" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="webStates" static="true" transient="false" type="java.util.Hashtable" type-generic-aware="java.util.Hashtable&lt;java.lang.Integer, android.os.Bundle&gt;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="webViews" static="true" transient="false" type="java.util.Hashtable" type-generic-aware="java.util.Hashtable&lt;java.lang.Integer, android.webkit.WebView&gt;" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.util.HashMap" extends-generic-aware="java.util.HashMap&lt;java.lang.String, java.lang.Boolean&gt;" final="false" name="Feature.1" static="true" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="android.os.Handler" extends-generic-aware="android.os.Handler" final="false" name="Feature.10" static="false" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.util.TimerTask" extends-generic-aware="java.util.TimerTask" final="false" name="Feature.10.1" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.util.TimerTask" extends-generic-aware="java.util.TimerTask" final="false" name="Feature.10.2" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.util.TimerTask" extends-generic-aware="java.util.TimerTask" final="false" name="Feature.10.3" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.util.TimerTask" extends-generic-aware="java.util.TimerTask" final="false" name="Feature.11" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Thread" extends-generic-aware="java.lang.Thread" final="false" name="Feature.12" static="false" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Thread" extends-generic-aware="java.lang.Thread" final="false" name="Feature.12.1" static="false" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Feature.12.1.1" static="false" visibility="">
+<implements name="android.view.View.OnTouchListener" name-generic-aware="android.view.View.OnTouchListener">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="onTouch" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.view.View">
+</parameter>
+<parameter name="p1" type="android.view.MotionEvent">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Thread" extends-generic-aware="java.lang.Thread" final="false" name="Feature.13" static="true" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="android.os.AsyncTask" extends-generic-aware="android.os.AsyncTask&lt;java.lang.Void, java.lang.Void, java.lang.String&gt;" final="false" name="Feature.2" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="doInBackground" native="false" return="java.lang.Object" static="false" synchronized="false" visibility="protected">
+<parameter name="p0" type="java.lang.Object[]">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="doInBackground" native="false" return="java.lang.String" static="false" synchronized="false" visibility="protected">
+<parameter name="p0" type="java.lang.Void...">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onPostExecute" native="false" return="void" static="false" synchronized="false" visibility="protected">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Feature.3" static="false" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Feature.4" static="true" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Feature.5" static="false" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.util.TimerTask" extends-generic-aware="java.util.TimerTask" final="false" name="Feature.6" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.util.TimerTask" extends-generic-aware="java.util.TimerTask" final="false" name="Feature.7" static="true" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Thread" extends-generic-aware="java.lang.Thread" final="false" name="Feature.8" static="true" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.util.TimerTask" extends-generic-aware="java.util.TimerTask" final="false" name="Feature.9" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Feature.AppLifeCycleStatusManager" static="true" visibility="protected">
+<constructor deprecated="not deprecated" final="false" name="Feature.AppLifeCycleStatusManager" static="false" type="com.kochava.android.tracker.Feature.AppLifeCycleStatusManager" visibility="protected">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="changeStatus" native="false" return="void" static="true" synchronized="false" visibility="protected">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<field deprecated="not deprecated" final="true" name="IS_FOCUSED" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;is_focused&quot;" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="IS_IN_BACKGROUND" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;is_in_background&quot;" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="active" static="true" transient="false" type="boolean" type-generic-aware="boolean" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="resumed" static="true" transient="false" type="boolean" type-generic-aware="boolean" visibility="protected" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Thread" extends-generic-aware="java.lang.Thread" final="false" name="Feature.AppLifeCycleStatusManager.1" static="true" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="Feature.CURRENCIES" static="false" visibility="public">
+<field deprecated="not deprecated" final="true" name="AED" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;AED&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="AUD" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;AUD&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="CAD" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;CAD&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="CHF" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;CHF&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="CNY" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;CNY&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="DKK" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;DKK&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="EUR" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;EUR&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="GBP" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;GBP&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="IDR" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;IDR&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ILS" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;ILS&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="INR" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;INR&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="MXP" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;MXP&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="NOK" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;NOK&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="NZD" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;NZD&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="RUB" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;RUB&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="SAR" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;SAR&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="SEK" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;SEK&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="TRY" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;TRY&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="USD" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;USD&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="YEN" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;YEN&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ZAR" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;ZAR&quot;" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="Feature.INPUTITEMS" static="false" visibility="public">
+<field deprecated="not deprecated" final="true" name="APP_LIMIT_TRACKING" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;app_limit_tracking&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="BIDDER_HOST" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;bidder_host&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="CONTROL_HOST" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;control_host&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="CURRENCY" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;currency&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="DEBUG_ON" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;debug&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="FLUSH_IN_BACKGROUND" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;flush_in_background&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="IDENTITY_LINK" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;identity_link&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="KOCHAVA_APP_ID" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;kochava_app_id&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="PARTNER_NAME" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;partner_name&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="REQUEST_ATTRIBUTION" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;request_attribution&quot;" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Feature.LifeCycleTracker" static="false" visibility="protected">
+<implements name="android.app.Application.ActivityLifecycleCallbacks" name-generic-aware="android.app.Application.ActivityLifecycleCallbacks">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="Feature.LifeCycleTracker" static="false" type="com.kochava.android.tracker.Feature.LifeCycleTracker" visibility="protected">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="onActivityCreated" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.app.Activity">
+</parameter>
+<parameter name="p1" type="android.os.Bundle">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onActivityDestroyed" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.app.Activity">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onActivityPaused" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.app.Activity">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onActivityResumed" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.app.Activity">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onActivitySaveInstanceState" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.app.Activity">
+</parameter>
+<parameter name="p1" type="android.os.Bundle">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onActivityStarted" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.app.Activity">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onActivityStopped" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.app.Activity">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Feature.MemoryBoss" static="false" visibility="protected">
+<implements name="android.content.ComponentCallbacks2" name-generic-aware="android.content.ComponentCallbacks2">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="Feature.MemoryBoss" static="false" type="com.kochava.android.tracker.Feature.MemoryBoss" visibility="protected">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="onConfigurationChanged" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.content.res.Configuration">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onLowMemory" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onTrimMemory" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="Feature.PARAMS" static="false" visibility="public">
+<field deprecated="not deprecated" final="true" name="ADID" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;adid&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ANDROID_ID" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;android_id&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="FB_ATTRIBUTION_ID" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;fb_attribution_id&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="IMEI" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;imei&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="MAC" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;mac&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ODIN" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;odin&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="OPEN_UDID" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;open_udid&quot;" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="Feature.PRIVATEINPUTITEMS" static="false" visibility="">
+<field deprecated="not deprecated" final="true" name="CLICK_DATA" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;clickData&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="FLUSH_RATE" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;flush_rate&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="OVERRIDE_AUTOMATIC_SESSIONS" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;override_automatic_sessions&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="SUPPRESS_ADID_GATHER" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;suppress_adid_gather&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="VERSION_EXTENSION" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;version_extension&quot;" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Feature.TrackTask" static="true" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="Feature.WATCHLIST" static="false" visibility="public">
+<field deprecated="not deprecated" final="true" name="ADID" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;adid&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="APP_LIMIT_TRACKING" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;app_limit_tracking&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="APP_SHORT_STRING" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;app_short_string&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="APP_VERSION" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;app_version&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="DEVICE_LIMIT_TRACKING" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;device_limit_tracking&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="OS_VERSION" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;os_version&quot;" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="Feature.WHITELISTITEMS" static="false" visibility="">
+<field deprecated="not deprecated" final="true" name="EMAIL" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;email&quot;" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Global" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="Global" static="false" type="com.kochava.android.tracker.Global" visibility="public">
+</constructor>
+<field deprecated="not deprecated" final="true" name="CURRENCYLIST" static="true" transient="false" type="java.util.List" type-generic-aware="java.util.List&lt;java.lang.String&gt;" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="DEBUG" static="true" transient="false" type="boolean" type-generic-aware="boolean" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="DEBUGERROR" static="true" transient="false" type="boolean" type-generic-aware="boolean" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="SDK_PROTOCOL" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;3&quot;" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="SDK_VERSION" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;Android20150511&quot;" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="R" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="R" static="false" type="com.kochava.android.tracker.R" visibility="public">
+</constructor>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="R.anim" static="true" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="R.anim" static="false" type="com.kochava.android.tracker.R.anim" visibility="public">
+</constructor>
+<field deprecated="not deprecated" final="true" name="slide_down" static="true" transient="false" type="int" type-generic-aware="int" value="2130968576" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="slide_up" static="true" transient="false" type="int" type-generic-aware="int" value="2130968577" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="stay" static="true" transient="false" type="int" type-generic-aware="int" value="2130968578" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="R.attr" static="true" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="R.attr" static="false" type="com.kochava.android.tracker.R.attr" visibility="public">
+</constructor>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="R.drawable" static="true" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="R.drawable" static="false" type="com.kochava.android.tracker.R.drawable" visibility="public">
+</constructor>
+<field deprecated="not deprecated" final="true" name="icon" static="true" transient="false" type="int" type-generic-aware="int" value="2130837504" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="R.integer" static="true" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="R.integer" static="false" type="com.kochava.android.tracker.R.integer" visibility="public">
+</constructor>
+<field deprecated="not deprecated" final="true" name="google_play_services_version" static="true" transient="false" type="int" type-generic-aware="int" value="2131034112" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="R.layout" static="true" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="R.layout" static="false" type="com.kochava.android.tracker.R.layout" visibility="public">
+</constructor>
+<field deprecated="not deprecated" final="true" name="main" static="true" transient="false" type="int" type-generic-aware="int" value="2130903040" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="R.string" static="true" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="R.string" static="false" type="com.kochava.android.tracker.R.string" visibility="public">
+</constructor>
+<field deprecated="not deprecated" final="true" name="app_name" static="true" transient="false" type="int" type-generic-aware="int" value="2131099648" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="hello" static="true" transient="false" type="int" type-generic-aware="int" value="2131099649" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="mv" static="true" transient="false" type="int" type-generic-aware="int" value="2131099650" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="android.content.BroadcastReceiver" extends-generic-aware="android.content.BroadcastReceiver" final="false" name="ReferralCapture" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="ReferralCapture" static="false" type="com.kochava.android.tracker.ReferralCapture" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="onReceive" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+<parameter name="p1" type="android.content.Intent">
+</parameter>
+</method>
+<field deprecated="not deprecated" final="false" name="params" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="android.app.Activity" extends-generic-aware="android.app.Activity" final="false" name="WebAdView" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="WebAdView" static="false" type="com.kochava.android.tracker.WebAdView" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="onCreate" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.os.Bundle">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="android.webkit.WebViewClient" extends-generic-aware="android.webkit.WebViewClient" final="false" name="WebAdView.1" static="false" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="WebAdView.2" static="false" visibility="">
+<implements name="android.view.View.OnClickListener" name-generic-aware="android.view.View.OnClickListener">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="onClick" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.view.View">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="WebAdView.3" static="false" visibility="">
+<implements name="android.content.DialogInterface.OnCancelListener" name-generic-aware="android.content.DialogInterface.OnCancelListener">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="onCancel" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.content.DialogInterface">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="WebAdView.MyPictureListener" static="false" visibility="">
+<implements name="android.webkit.WebView.PictureListener" name-generic-aware="android.webkit.WebView.PictureListener">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="onNewPicture" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.webkit.WebView">
+</parameter>
+<parameter name="p1" type="android.graphics.Picture">
+</parameter>
+</method>
+</class>
+</package>
+<package name="com.kochava.android.util">
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Base64Coder" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="Base64Coder" static="false" type="com.kochava.android.util.Base64Coder" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="decode" native="false" return="byte[]" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="char[]">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="decode" native="false" return="byte[]" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="decodeString" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="encode" native="false" return="char[]" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="byte[]">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="encode" native="false" return="char[]" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="byte[]">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="encodeString" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Logging" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="Logging" static="false" type="com.kochava.android.util.Logging" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="Log" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="LogError" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="LogRequirementsError" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<field deprecated="not deprecated" final="true" name="LOGTAG" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;KochavaTracker&quot;" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="REQLOGTAG" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;KochavaRequirements&quot;" visibility="protected" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="StringUtils" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="StringUtils" static="false" type="com.kochava.android.util.StringUtils" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="inputStreamToString" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.io.InputStream">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+</package>
+</api>
